@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Yi-Shan Chen | Product Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,0..1&display=swap" rel="stylesheet"/>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 
+                        primary: "#1A56DB",
+                        black: "#1A1A1A", 
+                        morandi: {
+                            blue: '#E6EEF5',
+                            sage: '#E5ECE7',
+                            clay: '#F2EFE9',
+                            stone: '#F4F4F0',
+                            slate: '#E8ECF1',
+                        },
+                        gray: {
+                            50: '#F9FAFB',
+                            100: '#F3F4F6',
+                            200: '#E5E7EB',
+                            600: '#4B5563',
+                            900: '#111827',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        tight: '-0.02em',
+                        tighter: '-0.04em',
+                        widest: '0.08em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FAFAFA; } 
+        
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        
+        .editorial-text { color: #4B5563; line-height: 1.8; font-size: 1.125rem; margin-bottom: 1.5rem; font-weight: 400; }
+        .editorial-heading { color: #1A1A1A; font-weight: 800; margin-top: 3.5rem; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+        
+        /* High Visibility Deliverable Cards */
+        .deliverable-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 2px solid #E5E7EB; background: white; }
+        .deliverable-card:hover { border-color: #1A56DB; transform: translateY(-4px); box-shadow: 0 12px 24px -8px rgba(26, 86, 219, 0.15); }
+        
+        .page-hidden { display: none !important; }
+        .img-container { overflow: hidden; border-radius: 1.5rem; }
+        .img-container img { transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .group:hover .img-container img { transform: scale(1.04); }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 12px)); } 
+        }
+        .animate-scroll { animation: scroll 40s linear infinite; }
+        .animate-scroll:hover { animation-play-state: paused; }
+    </style>
+</head>
+<body class="text-black antialiased selection:bg-primary selection:text-white">
+
+    <!-- Floating Navigation -->
+    <div class="fixed top-6 left-0 right-0 z-50 px-4 transition-all duration-300">
+        <nav class="max-w-[1000px] mx-auto bg-white/90 backdrop-blur-md rounded-full px-4 py-3 flex justify-between items-center shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100">
+            <a href="#" onclick="showHome(event)" class="font-sans font-bold text-xl tracking-tight group flex items-center gap-3 pl-2">
+                <span id="nav-back-icon" class="material-symbols-outlined text-[20px] hidden group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                <div class="w-9 h-9 bg-primary flex items-center justify-center text-white" style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                </div>
+                <span class="text-gray-900 ml-1">Yi-Shan</span>
+            </a>
+            <div id="nav-links" class="hidden md:flex gap-8 text-[15px] font-semibold text-gray-500">
+                <a href="#work" onclick="showHome(event)" class="hover:text-primary transition-colors">Work</a>
+                <a href="#research" onclick="showHome(event)" class="hover:text-primary transition-colors">Research</a>
+                <a href="#about" class="hover:text-primary transition-colors">About</a>
+                <a href="mailto:yishan2004931022@gmail.com" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+            <a href="#" class="px-7 py-3 bg-[#1A1A1A] text-white text-[15px] font-bold rounded-full hover:bg-black transition-all duration-300 shadow-md">Resume</a>
+        </nav>
+    </div>
+
+    <!-- ================= HOME VIEW ================= -->
+    <div id="home-view" class="w-full">
+        <main class="max-w-[1000px] mx-auto px-6 pt-40 pb-20">
+            
+            <!-- Hero Section -->
+            <section class="flex flex-col justify-center reveal mb-32 pt-10">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-10">
+                    <div class="mt-4 md:mt-0 flex-1">
+                        <h1 class="text-[80px] md:text-[110px] lg:text-[140px] font-black leading-none tracking-tighter mb-4 text-[#1A1A1A] uppercase">
+                            YI-SHAN
+                        </h1>
+                        <p class="text-[15px] md:text-[17px] text-gray-500 font-medium leading-relaxed max-w-md">
+                            Tech-Driven Product Manager @ NTUST <br/>
+                            Pre @ E-commerce, Mobile AI Startups
+                        </p>
+                    </div>
+                    <div class="w-40 h-40 md:w-56 md:h-56 lg:w-[260px] lg:h-[260px] rounded-full overflow-hidden shrink-0 bg-gray-100 shadow-sm border border-gray-100 mt-2 md:mt-0">
+                        <img src="https://i.ibb.co/vxCbRPNK/S-98033669-0-1.jpg" alt="Yi-Shan Chen Profile" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="flex flex-col-reverse md:flex-row justify-between items-end gap-12 mt-20 md:mt-24">
+                    <div class="flex gap-4 mb-2 md:mb-0 w-full md:w-auto">
+                        <a href="#" class="flex flex-1 md:flex-none items-center justify-center gap-2 bg-[#1A1A1A] text-white px-7 py-3.5 rounded-full font-semibold hover:bg-black transition-colors shadow-md text-[15px]">
+                            Resume <span class="material-symbols-outlined text-[18px]">north_east</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/selina-chen-050582170/?locale=en_US" target="_blank" class="flex shrink-0 items-center justify-center w-[52px] h-[52px] rounded-full border border-gray-300 text-gray-800 hover:border-gray-900 hover:text-gray-900 transition-colors font-bold text-sm">
+                            in
+                        </a>
+                    </div>
+                    <div class="w-full md:w-[60%] lg:w-[55%]">
+                        <h2 class="text-[28px] md:text-[34px] lg:text-[40px] font-bold leading-[1.2] tracking-tight text-[#1A1A1A]">
+                            Product Manager bridging the gap between <span class="text-primary">AI technology</span> & business value.
+                        </h2>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Work Section -->
+            <section id="work" class="py-12 border-t border-gray-200">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between mb-16 gap-6 reveal">
+                    <h3 class="text-2xl font-bold tracking-tight text-gray-900">Selected Projects</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <button class="px-5 py-2.5 bg-[#1A1A1A] text-white text-[11px] font-bold rounded-full uppercase tracking-widest shadow-sm">All Work</button>
+                        <button class="px-5 py-2.5 bg-white text-gray-500 border border-gray-200 text-[11px] font-bold rounded-full uppercase tracking-widest hover:border-gray-300 hover:text-gray-800 transition-all shadow-sm">Product Management</button>
+                        <button class="px-5 py-2.5 bg-white text-gray-500 border border-gray-200 text-[11px] font-bold rounded-full uppercase tracking-widest hover:border-gray-300 hover:text-gray-800 transition-all shadow-sm">Data & AI</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-12">
+                    
+                    <!-- Project 1: AWS -->
+                    <a href="#aws-case-study" onclick="showCaseStudy(event, 'aws')" class="group col-span-1 md:col-span-2 block reveal cursor-pointer">
+                        <div class="flex flex-col md:flex-row gap-10 items-center bg-white p-6 md:p-8 rounded-[2.5rem] shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 border border-gray-100">
+                            <div class="w-full md:w-[50%] aspect-[4/3] bg-morandi-blue img-container order-1 flex items-center justify-center p-8">
+                                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2000&auto=format&fit=crop" alt="AWS Project" class="w-full h-full object-cover rounded-2xl shadow-lg">
+                            </div>
+                            <div class="flex-1 order-2 py-4 pl-4 md:pl-8">
+                                <div class="flex flex-wrap gap-2 mb-5">
+                                    <span class="px-4 py-1.5 bg-blue-50 text-primary text-[11px] font-bold rounded-full uppercase tracking-widest">Product Owner</span>
+                                    <span class="px-4 py-1.5 bg-gray-100 text-gray-600 text-[11px] font-bold rounded-full uppercase tracking-widest">Agile / Scrum</span>
+                                    <span class="px-4 py-1.5 bg-gray-50 border border-gray-200 text-gray-600 text-[11px] font-bold rounded-full uppercase tracking-widest flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> In Progress
+                                    </span>
+                                </div>
+                                <h3 class="text-3xl md:text-[32px] font-bold tracking-tight mb-4 group-hover:text-primary transition-colors text-gray-900 leading-tight">AWS Educate Ambassador Portal</h3>
+                                <p class="text-gray-500 text-[17px] leading-relaxed mb-8 pr-4">Led a cross-functional team to build the official AWS Educate platform from scratch, managing 16-week sprints and bridging academia with cloud tech.</p>
+                                <span class="inline-flex items-center gap-2 font-bold text-primary text-sm uppercase tracking-widest">Read Case Study <span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project 2: Slowlyfly -->
+                    <a href="#slowlyfly-case-study" onclick="showCaseStudy(event, 'slowlyfly')" class="group reveal delay-100 cursor-pointer block bg-white p-6 rounded-[2.5rem] shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 border border-gray-100">
+                        <div class="w-full aspect-[4/3] bg-gray-50 img-container mb-8 p-3 flex items-center justify-center rounded-[1.5rem]">
+                            <img src="https://i.ibb.co/hF7TQHb2/2026-03-13-164620.png" class="w-full h-full object-cover rounded-[1.25rem] shadow-sm border border-gray-200" alt="Slowlyfly Project">
+                        </div>
+                        <div class="px-2">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-4 py-1.5 bg-emerald-50 text-emerald-600 text-[11px] font-bold rounded-full uppercase tracking-widest">E-commerce</span>
+                                <span class="px-4 py-1.5 bg-gray-100 text-gray-600 text-[11px] font-bold rounded-full uppercase tracking-widest">0 to 1</span>
+                            </div>
+                            <h3 class="text-2xl font-bold tracking-tight mb-3 group-hover:text-emerald-600 transition-colors">Slowlyfly Brand Website</h3>
+                            <p class="text-gray-500 text-[15px] leading-relaxed mb-6">Led the 0-to-1 launch of the Slowlyfly brand website within a month. Optimized UX workflows resulting in +34.1% impression growth.</p>
+                            <span class="inline-flex items-center gap-2 font-bold text-gray-900 text-xs uppercase tracking-widest group-hover:text-emerald-600 transition-colors">View Details <span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span></span>
+                        </div>
+                    </a>
+
+                    <!-- Project 3: Mobile AI -->
+                    <a href="#mobile-ai-case-study" onclick="showCaseStudy(event, 'mobile-ai')" class="group reveal delay-200 cursor-pointer bg-white p-6 rounded-[2.5rem] shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 border border-gray-100 block">
+                        <div class="w-full aspect-[4/3] bg-orange-50/50 img-container mb-8 p-6 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1000" class="w-full h-full object-cover rounded-[1.25rem] shadow-md">
+                        </div>
+                        <div class="px-2">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-4 py-1.5 bg-orange-50 text-orange-600 text-[11px] font-bold rounded-full uppercase tracking-widest">Mobile AI</span>
+                                <span class="px-4 py-1.5 bg-gray-100 text-gray-600 text-[11px] font-bold rounded-full uppercase tracking-widest">No-Code</span>
+                            </div>
+                            <h3 class="text-2xl font-bold tracking-tight mb-3 group-hover:text-orange-600 transition-colors">Online Bookstore App</h3>
+                            <p class="text-gray-500 text-[15px] leading-relaxed mb-6">Built an intuitive mobile e-commerce experience from 0 to 1 using FlutterFlow and AI tools to streamline the user journey.</p>
+                            <span class="inline-flex items-center gap-2 font-bold text-gray-900 text-xs uppercase tracking-widest group-hover:text-orange-600 transition-colors">Read Case Study <span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span></span>
+                        </div>
+                    </a>
+
+                    <!-- Project 4: Guangxing Paper Mill -->
+                    <a href="#guangxing-case-study" onclick="showCaseStudy(event, 'guangxing')" class="group col-span-1 md:col-span-2 block reveal cursor-pointer mt-4">
+                        <div class="flex flex-col md:flex-row gap-10 items-center bg-white p-6 md:p-8 rounded-[2.5rem] shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 border border-gray-100">
+                            <!-- White Background Frame for Guangxing -->
+                            <div class="w-full md:w-[50%] aspect-[4/3] bg-gray-50 img-container order-1 flex items-center justify-center p-3 rounded-3xl overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2000&auto=format&fit=crop" alt="Guangxing Project Web Design" class="w-full h-full object-cover rounded-[1.25rem] shadow-sm group-hover:scale-[1.02] transition-transform duration-700">
+                            </div>
+                            <div class="flex-1 order-2 py-4 pl-4 md:pl-8">
+                                <div class="flex flex-wrap gap-2 mb-5">
+                                    <span class="px-4 py-1.5 bg-stone-100 text-stone-700 text-[11px] font-bold rounded-full uppercase tracking-widest">UX / UI Redesign</span>
+                                    <span class="px-4 py-1.5 bg-gray-100 text-gray-600 text-[11px] font-bold rounded-full uppercase tracking-widest">Class Project</span>
+                                </div>
+                                <h3 class="text-3xl md:text-[32px] font-bold tracking-tight mb-4 group-hover:text-stone-600 transition-colors text-gray-900 leading-tight">Guangxing Paper Mill Redesign</h3>
+                                <p class="text-gray-500 text-[17px] leading-relaxed mb-8 pr-4">Restructured the digital experience of a traditional craft brand, tackling severe UX issues by reorganizing information architecture and building a modern design system.</p>
+                                <span class="inline-flex items-center gap-2 font-bold text-stone-700 text-sm uppercase tracking-widest group-hover:text-stone-900 transition-colors">Read Case Study <span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project 5: Spotify Intelligence -->
+                    <a href="#spotify-case-study" onclick="showCaseStudy(event, 'spotify')" class="group col-span-1 md:col-span-2 block reveal cursor-pointer mt-4">
+                        <!-- Restored to Clean White Frame matching other projects -->
+                        <div class="flex flex-col md:flex-row gap-10 items-center bg-white p-6 md:p-8 rounded-[2.5rem] shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 border border-gray-100">
+                            <div class="w-full md:w-[50%] aspect-[4/3] bg-gray-50 img-container order-1 flex items-center justify-center p-3 rounded-3xl overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop" alt="Spotify Intelligence Data Project" class="w-full h-full object-cover rounded-[1.25rem] shadow-sm group-hover:scale-[1.02] transition-transform duration-700">
+                            </div>
+                            <div class="flex-1 order-2 py-4 pl-4 md:pl-8">
+                                <div class="flex flex-wrap gap-2 mb-5">
+                                    <span class="px-4 py-1.5 bg-indigo-50 text-indigo-700 text-[11px] font-bold rounded-full uppercase tracking-widest">Data Product</span>
+                                    <span class="px-4 py-1.5 bg-gray-100 text-gray-600 text-[11px] font-bold rounded-full uppercase tracking-widest">Python & Streamlit</span>
+                                </div>
+                                <h3 class="text-3xl md:text-[32px] font-bold tracking-tight mb-4 group-hover:text-indigo-600 transition-colors text-gray-900 leading-tight">Spotify Intelligence</h3>
+                                <p class="text-gray-500 text-[17px] leading-relaxed mb-8 pr-4">Transformed massive raw music datasets into an actionable "Business Decision Dashboard" for producers and marketing teams, driving decisions from descriptive to prescriptive.</p>
+                                <span class="inline-flex items-center gap-2 font-bold text-indigo-700 text-sm uppercase tracking-widest group-hover:text-indigo-900 transition-colors">Read Case Study <span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- ================= RESEARCH EXPERIENCE ================= -->
+            <section id="research" class="py-16 mt-8 border-t border-gray-200">
+                <div class="flex flex-col mb-12 reveal">
+                    <h3 class="text-[28px] font-bold tracking-tight text-gray-900 mb-2">Research & Academic Initiatives</h3>
+                    <p class="text-gray-500 text-[15px]">Ongoing projects exploring the intersection of AI, Finance, and Data Semantics.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white border border-gray-200 rounded-[2rem] p-8 shadow-[0_2px_10px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300 group reveal">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined">account_balance</span>
+                            </div>
+                            <span class="px-3.5 py-1.5 bg-gray-50 border border-gray-100 text-gray-600 text-[10px] font-bold rounded-full uppercase tracking-widest flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> In Progress
+                            </span>
+                        </div>
+                        <h4 class="text-[19px] font-bold text-gray-900 mb-3 leading-snug group-hover:text-primary transition-colors">IFKAD 2026 International Conference Paper</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Researching the adoption of Federated Learning in the financial sector. Addressing technical deployment challenges under Taiwan's financial anti-fraud regulations and privacy constraints, demonstrating precise analytical skills for FinTech industry pain points.
+                        </p>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-[2rem] p-8 shadow-[0_2px_10px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300 group reveal delay-100">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined">category</span>
+                            </div>
+                            <span class="px-3.5 py-1.5 bg-gray-50 border border-gray-100 text-gray-600 text-[10px] font-bold rounded-full uppercase tracking-widest flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> In Progress
+                            </span>
+                        </div>
+                        <h4 class="text-[19px] font-bold text-gray-900 mb-3 leading-snug group-hover:text-purple-600 transition-colors">KDD International Conference Paper</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Constructing a robust multi-modal e-commerce product classification framework driven by mid-level semantic alignment to improve cataloging accuracy.
+                        </p>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-[2rem] p-8 shadow-[0_2px_10px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300 group reveal">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined">smart_toy</span>
+                            </div>
+                            <span class="px-3.5 py-1.5 bg-gray-50 border border-gray-100 text-gray-600 text-[10px] font-bold rounded-full uppercase tracking-widest flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> In Progress
+                            </span>
+                        </div>
+                        <h4 class="text-[19px] font-bold text-gray-900 mb-3 leading-snug group-hover:text-orange-600 transition-colors">NTU AI Application Club Project</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Investigating the strategic deception behaviors and alignment risks of Large Language Models (LLMs) when subjected to simulated commercial pressures.
+                        </p>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-[2rem] p-8 shadow-[0_2px_10px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all duration-300 group reveal delay-100">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined">document_scanner</span>
+                            </div>
+                            <span class="px-3.5 py-1.5 bg-gray-50 border border-gray-100 text-gray-600 text-[10px] font-bold rounded-full uppercase tracking-widest flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> In Progress
+                            </span>
+                        </div>
+                        <h4 class="text-[19px] font-bold text-gray-900 mb-3 leading-snug group-hover:text-emerald-600 transition-colors">NSTC Research Project</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Supported by the National Science and Technology Council. Developing an automated LaTeX compilation and layout correction system based on a multi-modal closed-loop feedback mechanism.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    <!-- ==============================================
+         CASE STUDY 1: AWS EDUCATE
+         ============================================== -->
+    <div id="aws-case-study-view" class="w-full page-hidden">
+        <main class="max-w-[840px] mx-auto px-6 pt-40 pb-24">
+            <header class="mb-12 reveal">
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-4 py-1.5 bg-blue-50 text-primary text-[11px] font-bold rounded-full uppercase tracking-widest">Product Owner</span>
+                    <span class="px-4 py-1.5 bg-gray-200 text-gray-700 text-[11px] font-bold rounded-full uppercase tracking-widest">Agile / Scrum</span>
+                    <span class="px-4 py-1.5 bg-gray-50 border border-gray-200 text-gray-600 text-[11px] font-bold rounded-full uppercase tracking-widest flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> In Progress
+                    </span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-[56px] font-black leading-[1.1] tracking-tighter mb-8 text-gray-900">
+                    AWS Educate Ambassador Portal: <br/>0 to 1 Development
+                </h1>
+                
+                <div class="py-6 grid grid-cols-1 md:grid-cols-3 gap-8 border-y border-gray-200 mt-10">
+                    <div>
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Role</span>
+                        <strong class="text-[15px] font-bold text-gray-800">Product Owner</strong>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Core Tools</span>
+                        <div class="flex flex-wrap gap-2 text-gray-800 font-bold mt-1 text-[15px]">
+                            <span>Jira</span><span class="text-gray-300">/</span><span>Figma</span><span class="text-gray-300">/</span><span>Miro</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 pt-4 md:pt-0 md:border-t-0 border-t border-gray-200">
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Objective</span>
+                        <p class="text-gray-600 leading-relaxed text-[15px] max-w-3xl font-medium">
+                            Led a cross-functional team to build the official AWS Educate platform from scratch, effectively bridging the information gap between academia and the cloud industry.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <article class="max-w-[840px] mx-auto">
+                <section class="mb-24 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 1: Requirement Exploration & Consensus</h2>
+                    <p class="editorial-text">Before formal development, I led 3 preliminary Sprint 0 workshops to ensure team alignment. Through divergent and convergent thinking processes, we precisely defined the product direction.</p>
+                    
+                    <ul class="space-y-6 mb-10 mt-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-primary"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Brainstorming & Pain Points:</strong> Guided the team through divergent thinking to define User Personas and identify key user pain points.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-primary"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Requirement Convergence & User Stories:</strong> Utilized Miro to converge ideas. Through voting and prioritization, we defined the Level 0 to Level 1 site architecture and broke them down into actionable User Stories.</p>
+                        </li>
+                    </ul>
+
+                    <div class="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-200">
+                        <h4 class="text-gray-800 font-bold uppercase tracking-widest text-sm mb-5 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[20px] text-primary">folder_special</span> Deliverables & Outcomes
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <a href="https://miro.com/app/board/uXjVGXWqTOI=/?share_link_id=118528089105" target="_blank" class="deliverable-card rounded-[1rem] p-5 flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center shrink-0"><span class="material-symbols-outlined">architecture</span></div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-0.5 text-[15px]">User Story Mapping</h4>
+                                    <span class="text-primary text-sm font-semibold flex items-center gap-1 group-hover:underline">View on Miro <span class="material-symbols-outlined text-[14px]">open_in_new</span></span>
+                                </div>
+                            </a>
+                            <a href="https://docs.google.com/presentation/d/1-2eP1joEVYfScl_5V4_xihAvzuSfUmNJEavXE9uXBng/edit?slide=id.p10#slide=id.p10" target="_blank" class="deliverable-card rounded-[1rem] p-5 flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center shrink-0"><span class="material-symbols-outlined">slideshow</span></div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-0.5 text-[15px]">Sprint 0 Process</h4>
+                                    <span class="text-primary text-sm font-semibold flex items-center gap-1 group-hover:underline">Google Slides <span class="material-symbols-outlined text-[14px]">open_in_new</span></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="mb-24 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 2: Product Design & Blueprinting</h2>
+                    <p class="editorial-text">Translated the converged requirements into concrete visualizations, establishing the team's development Blueprint and serving as a clear baseline for engineering development.</p>
+
+                    <ul class="space-y-6 mb-10 mt-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-primary"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">User Flow Planning:</strong> Mapped out the website User Flow to ensure smooth navigation and operational pathways for users.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-primary"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Prototyping:</strong> Independently utilized Figma to produce Low-fidelity to High-fidelity wireframes and drafted specifications.</p>
+                        </li>
+                    </ul>
+
+                    <div class="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-200 mb-8">
+                        <h4 class="text-gray-800 font-bold uppercase tracking-widest text-sm mb-5 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[20px] text-primary">folder_special</span> Deliverables & Outcomes
+                        </h4>
+                        <a href="https://www.figma.com/design/MamsjYxuNJb4Xx7cs76wDH/%E5%A4%A7%E4%BD%BF%E5%AE%98%E7%B6%B2-UIUX?node-id=24-8149&t=N1nAa6oTXLovX7pW-0" target="_blank" class="deliverable-card rounded-[1rem] p-5 flex items-center justify-between group">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center shrink-0"><span class="material-symbols-outlined">draw</span></div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-0.5 text-[15px]">Figma Wireframe & User Flow</h4>
+                                    <span class="text-primary text-sm font-semibold flex items-center gap-1 group-hover:underline">Open Figma Design <span class="material-symbols-outlined text-[14px]">open_in_new</span></span>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-[24px] text-gray-400 group-hover:text-primary transition-colors">arrow_forward</span>
+                        </a>
+                    </div>
+
+                    <div class="rounded-3xl border border-gray-100 bg-white p-2 shadow-sm overflow-hidden group">
+                        <img src="https://i.ibb.co/4wNTjp5w/2026-03-13-172850.png" class="w-full h-auto rounded-2xl group-hover:scale-[1.02] transition-transform duration-500" alt="Figma Wireframe Screenshot">
+                    </div>
+                </section>
+
+                <section class="mb-20 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 3: Agile Execution & Team Propulsion</h2>
+                    <p class="editorial-text">Entering the implementation phase, I fully spearheaded the Scrum agile development process from Sprint 1 to present.</p>
+                    
+                    <ul class="space-y-6 mb-10 mt-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-primary"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Backlog Management:</strong> Translated requirements into Jira Tickets, defined detailed Acceptance Criteria, and prioritized tasks.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-primary"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Cross-Team Communication:</strong> Hosted Sprint Kick-offs, Daily Stand-ups, and Retrospective meetings. Consolidated issues, proposed solutions, and detailed meeting records to sync cross-departmental info.</p>
+                        </li>
+                    </ul>
+
+                    <div class="rounded-3xl border border-gray-100 bg-white p-2 shadow-sm overflow-hidden group">
+                        <img src="https://i.ibb.co/V02nqztR/2026-03-13-151732.png" class="w-full h-auto rounded-2xl group-hover:scale-[1.02] transition-transform duration-500" alt="Jira Agile Screenshot">
+                    </div>
+                </section>
+            </article>
+
+            <div class="max-w-[840px] mx-auto mt-24 pt-12 border-t border-gray-200 text-center reveal delay-100">
+                <a href="#" onclick="showHome(event)" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white border border-gray-200 text-gray-900 font-bold hover:border-primary hover:text-primary transition-all shadow-sm hover:shadow-md group">
+                    <span class="material-symbols-outlined text-[20px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                    Back to all projects
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <!-- ==============================================
+         CASE STUDY 2: SLOWLYFLY
+         ============================================== -->
+    <div id="slowlyfly-case-study-view" class="w-full page-hidden">
+        <main class="max-w-[840px] mx-auto px-6 pt-40 pb-24">
+            <header class="mb-12 reveal">
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-4 py-1.5 bg-emerald-50 text-emerald-600 text-[11px] font-bold rounded-full uppercase tracking-widest">Project Manager</span>
+                    <span class="px-4 py-1.5 bg-gray-200 text-gray-700 text-[11px] font-bold rounded-full uppercase tracking-widest">E-commerce</span>
+                    <span class="px-4 py-1.5 bg-emerald-50 text-emerald-600 text-[11px] font-bold rounded-full uppercase tracking-widest">0 to 1 Launch</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-[56px] font-black leading-[1.1] tracking-tighter mb-8 text-gray-900">
+                    Slowlyfly Brand: <br/>0 to 1 Website Development
+                </h1>
+                
+                <a href="https://slowlyfly.com/" target="_blank" class="inline-flex items-center gap-3 bg-emerald-600 text-white px-8 py-4 rounded-[1rem] font-bold shadow-lg shadow-emerald-600/20 hover:bg-emerald-700 hover:-translate-y-1 transition-all mb-10 group">
+                    <span class="material-symbols-outlined">language</span>
+                    View Live Website (slowlyfly.com)
+                    <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+                
+                <div class="py-6 grid grid-cols-1 md:grid-cols-3 gap-8 border-y border-gray-200 mt-6">
+                    <div>
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Role</span>
+                        <strong class="text-[15px] font-bold text-gray-800">Project Manager</strong>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Core Tools</span>
+                        <div class="flex gap-2 text-gray-800 font-bold mt-1 text-[15px]">
+                            <span>Figma</span><span class="text-gray-300">/</span><span>Notion</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 pt-4 md:pt-0 md:border-t-0 border-t border-gray-200">
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Background & Constraints</span>
+                        <p class="text-gray-600 leading-relaxed text-[15px] max-w-3xl font-medium">
+                            The client wanted to build a personal brand website capable of hosting courses. Faced with an extremely tight "1-month deadline" and "fragmented information with no prior architecture", I coordinated resources from zero to achieve a successful launch.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="rounded-3xl border border-gray-100 bg-white p-2 shadow-sm overflow-hidden group mb-20 reveal delay-100">
+                <img src="https://i.ibb.co/hF7TQHb2/2026-03-13-164620.png" class="w-full h-auto rounded-2xl group-hover:scale-[1.02] transition-transform duration-500" alt="Slowlyfly Final Website Screenshot">
+            </div>
+
+            <article class="max-w-[840px] mx-auto">
+                <section class="mb-24 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 1: Kick-off & Requirement Breakdown</h2>
+                    <p class="editorial-text">Facing scattered initial information from the client, my top priority was to "clarify requirements and align objectives."</p>
+                    
+                    <ul class="space-y-6 mb-10 mt-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-emerald-500"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">7-Milestone Planning:</strong> Drafted 7 key timeline nodes—including kick-off, architecture confirmation, incremental feedback, final UAT, and payment setup—ensuring team and client pacing.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-emerald-500"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Architecture & Asset Coordination:</strong> Assisted the client in organizing brand positioning, converting abstract concepts into a clear site architecture map, and establishing a systematic asset collection process.</p>
+                        </li>
+                    </ul>
+
+                    <div class="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-200">
+                        <h4 class="text-gray-800 font-bold uppercase tracking-widest text-sm mb-5 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[20px] text-emerald-600">folder_special</span> Deliverables & Outcomes
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <a href="https://www.figma.com/board/pah2sGIgjcFYfgYapGThmu/%E7%87%95%E5%AD%90%E7%B6%B2%E7%AB%99%E6%9E%B6%E6%A7%8B%E5%9C%96?node-id=0-1&t=IiQOL01AmFzixB5n-1" target="_blank" class="deliverable-card rounded-[1rem] p-5 flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center shrink-0"><span class="material-symbols-outlined">account_tree</span></div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-0.5 text-[15px]">Website Architecture</h4>
+                                    <span class="text-emerald-600 text-sm font-semibold flex items-center gap-1 group-hover:underline">View FigJam <span class="material-symbols-outlined text-[14px]">open_in_new</span></span>
+                                </div>
+                            </a>
+                            <a href="https://docs.google.com/document/d/1SfC79upQMuuaEqm3cBNjhCCl665ux7e7y48eHNRioco/edit?tab=t.0" target="_blank" class="deliverable-card rounded-[1rem] p-5 flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0"><span class="material-symbols-outlined">description</span></div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-0.5 text-[15px]">Asset & Copywriting Doc</h4>
+                                    <span class="text-emerald-600 text-sm font-semibold flex items-center gap-1 group-hover:underline">Google Docs <span class="material-symbols-outlined text-[14px]">open_in_new</span></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="mb-24 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 2: Design Validation & Incremental Delivery</h2>
+                    <p class="editorial-text">To prevent a gap between the final output and expectations, I introduced an Incremental Delivery mechanism rooted in Agile methodologies.</p>
+
+                    <ul class="space-y-6 mb-10 mt-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-emerald-500"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">High-Frequency Feedback Loop:</strong> Two days prior to every meeting, I proactively provided the current website prototype and discussion agenda, guiding the client to review early.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-emerald-500"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Visual & Flow Design:</strong> Proposed design recommendations for course pages and marketing funnels, producing Hi-fi visual plans to ensure a frictionless payment experience.</p>
+                        </li>
+                    </ul>
+
+                    <div class="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-200 mb-8">
+                        <h4 class="text-gray-800 font-bold uppercase tracking-widest text-sm mb-5 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[20px] text-emerald-600">folder_special</span> Deliverables & Outcomes
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <a href="https://www.figma.com/proto/YLFR0ltyCm3SEE0kvun3xe/%E7%87%95%E5%AD%90%E7%B7%A9%E9%A3%9B%EF%BC%BF%E5%93%81%E7%89%8C%E8%A6%96%E8%A6%BA%E4%BC%81%E5%8A%83_Design?node-id=2065-2&t=TzO6pmz32EI6jZw0-1" target="_blank" class="deliverable-card rounded-[1rem] p-5 flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center shrink-0"><span class="material-symbols-outlined">palette</span></div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-0.5 text-[15px]">Brand Visual Design</h4>
+                                    <span class="text-emerald-600 text-sm font-semibold flex items-center gap-1 group-hover:underline">Figma Proto <span class="material-symbols-outlined text-[14px]">open_in_new</span></span>
+                                </div>
+                            </a>
+                            <a href="https://www.figma.com/design/bDtW1e1BQFZ82uoVyIX8U6/%E9%99%B3%E5%84%80%E7%8F%8A_%E7%87%95%E5%AD%90%E7%B7%A9%E9%A3%9B%EF%BC%BF%E5%93%81%E7%89%8C%E8%A6%96%E8%A6%BA%E4%BC%81%E5%8A%83_Design?node-id=0-1&t=ruALojYfKRYOGOau-1" target="_blank" class="deliverable-card rounded-[1rem] p-5 flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center shrink-0"><span class="material-symbols-outlined">touch_app</span></div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-0.5 text-[15px]">Interactive Prototype</h4>
+                                    <span class="text-emerald-600 text-sm font-semibold flex items-center gap-1 group-hover:underline">Figma Design <span class="material-symbols-outlined text-[14px]">open_in_new</span></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="rounded-3xl border border-gray-100 bg-white p-2 shadow-sm overflow-hidden group">
+                        <img src="https://i.ibb.co/sJHKdL0p/2026-03-13-165057.png" class="w-full h-auto rounded-2xl group-hover:scale-[1.02] transition-transform duration-500" alt="UI Visual Design Screenshot">
+                    </div>
+                </section>
+
+                <section class="mb-20 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 3: Task Control & Problem Solving</h2>
+                    <p class="editorial-text">As the sole Project Manager, I integrated multiple demands from product, development, and the client side.</p>
+                    
+                    <ul class="space-y-6 mb-12 mt-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-emerald-500"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Precise Task Tracking:</strong> Utilized Notion to build an internal task board, distributing resources based on functional priority (e.g., payment gateway over minor visual tweaks).</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-emerald-500"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Emergency Response:</strong> When faced with client asset delays, I proactively tracked the situation, clarified the timeline impact, and stepped in to organize missing assets, ensuring development remained unblocked.</p>
+                        </li>
+                    </ul>
+
+                    <div class="bg-[#FDFBF7] border border-[#F2EFE9] p-8 md:p-10 rounded-[2rem] shadow-sm">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                            <span class="text-3xl">🏆</span> Project Impact & Feedback
+                        </h3>
+                        
+                        <blockquote class="border-l-4 border-emerald-500 pl-6 mb-8 py-2 bg-white rounded-r-xl shadow-sm">
+                            <p class="text-[17px] font-medium text-gray-800 italic leading-relaxed pr-4">
+                                "Completely exceeded expectations! A website that was initially estimated to take half a year was completed within a month, greatly accelerating our course launch and sales process."
+                            </p>
+                        </blockquote>
+                        
+                        <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">End-to-End Implementation:</strong> Delivered exactly on time within the high-pressure 1-month window. Not only completed the website and payment setup, but also assisted in brand content positioning and backend training, establishing a solid digital marketing foundation.</p>
+                    </div>
+                </section>
+            </article>
+
+            <div class="max-w-[840px] mx-auto mt-24 pt-12 border-t border-gray-200 text-center reveal delay-100">
+                <a href="#" onclick="showHome(event)" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white border border-gray-200 text-gray-900 font-bold hover:text-emerald-600 hover:border-emerald-600 transition-all shadow-sm hover:shadow-md group">
+                    <span class="material-symbols-outlined text-[20px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                    Back to all projects
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <!-- ==============================================
+         CASE STUDY 3: MOBILE AI APP
+         ============================================== -->
+    <div id="mobile-ai-case-study-view" class="w-full page-hidden">
+        <main class="max-w-[840px] mx-auto px-6 pt-40 pb-24">
+            <header class="mb-12 reveal">
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-4 py-1.5 bg-orange-50 text-orange-600 text-[11px] font-bold rounded-full uppercase tracking-widest">Product Owner</span>
+                    <span class="px-4 py-1.5 bg-gray-200 text-gray-700 text-[11px] font-bold rounded-full uppercase tracking-widest">FlutterFlow (No-Code)</span>
+                    <span class="px-4 py-1.5 bg-orange-50 text-orange-600 text-[11px] font-bold rounded-full uppercase tracking-widest">Class Project</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-[56px] font-black leading-[1.1] tracking-tighter mb-8 text-gray-900">
+                    Online Bookstore App:<br/>0 to 1 VibeCoding Implementation
+                </h1>
+                
+                <div class="py-6 grid grid-cols-1 md:grid-cols-3 gap-8 border-y border-gray-200 mt-10">
+                    <div>
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Role</span>
+                        <strong class="text-[15px] font-bold text-gray-800">Product Owner</strong>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Core Tech</span>
+                        <div class="flex flex-wrap gap-2 text-gray-800 font-bold mt-1 text-[15px]">
+                            <span>FlutterFlow</span><span class="text-gray-300">/</span><span>UI/UX Design</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 pt-4 md:pt-0 md:border-t-0 border-t border-gray-200">
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Design Philosophy</span>
+                        <p class="text-gray-600 leading-relaxed text-[15px] max-w-3xl font-medium">
+                            Centered around "simplicity and intuitiveness" to create a seamless and accessible mobile e-commerce interface, ensuring every user enjoys a frictionless shopping experience.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="rounded-3xl border border-gray-100 bg-white p-2 shadow-sm overflow-hidden group mb-20 reveal delay-100">
+                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2000&auto=format&fit=crop" class="w-full h-auto rounded-[1.25rem] group-hover:scale-[1.02] transition-transform duration-500" alt="Mobile App Development">
+            </div>
+
+            <article class="max-w-[840px] mx-auto">
+                <section class="mb-24 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 1: User Flow & IA Breakdown</h2>
+                    <p class="editorial-text">To ensure a complete e-commerce shopping experience, I broke down complex functional requirements into three core flows, implementing 11 key pages that cover the entire User Journey.</p>
+                    
+                    <ul class="space-y-6 mb-10 mt-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-orange-500"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Account & Permission System:</strong> Includes Login, Registration, and Member Dashboard, providing personalized settings and data management.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-orange-500"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Content Discovery & Navigation:</strong> Designed the Home (Personalized Recommendations), Category, Bestsellers, Book Details, and Search pages to shorten the user's path to target books.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-orange-500"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Transaction & Service Flow:</strong> Built the Shopping Cart, Add-on Items, and Favorites pages, and integrated an AI Customer Service page to resolve shopping hurdles in real-time.</p>
+                        </li>
+                    </ul>
+                </section>
+                
+                <section class="mb-24 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 2: UI/UX Experience Optimization</h2>
+                    <p class="editorial-text">Given the limited screen real estate on mobile devices, I integrated multiple UI components to solve information overload and enhance operational intuitiveness.</p>
+
+                    <ul class="space-y-6 mb-10 mt-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-orange-500"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Drawer (Side Menu):</strong> Housed category pages in a sidebar, providing global navigation without cluttering the main screen.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-orange-500"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Tab Bar:</strong> Ensured core menus (e.g., Bestsellers, New Arrivals) are clearly visible, reducing switching costs.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-orange-500"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Page View:</strong> Implemented smooth horizontal swiping for book displays and featured content on the homepage, increasing browsing immersion.</p>
+                        </li>
+                    </ul>
+
+                    <div class="relative w-[100vw] ml-[calc(-50vw+50%)] overflow-hidden mt-12 py-10 bg-orange-50/50 border-y border-orange-100">
+                        <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-orange-50/50 to-transparent z-10 pointer-events-none"></div>
+                        <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-orange-50/50 to-transparent z-10 pointer-events-none"></div>
+                        
+                        <div class="flex gap-6 animate-scroll w-max px-6 items-center">
+                            <!-- Group 1 -->
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/fzFhRFCQ/2025-05-31-005253.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 1"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/TqrvrRvQ/2025-05-31-011814.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 2"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/XZskkTd4/2025-05-31-005733.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 3"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/20KL479k/2025-06-02-200709.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 4"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/v4xGnyb6/2025-06-02-200458.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 5"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/nNDBV7Cc/2025-06-02-200527.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 6"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/MyGNPDMY/2025-06-02-200543.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 7"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/JR23LN0C/2025-05-31-005322.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 8"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/gL6tCtyT/2025-05-31-011752.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 9"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/PsV4t3X3/2025-06-02-200625.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 10"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/j9L7mNH6/2025-05-31-011829.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 11"></div>
+                            <!-- Group 2 -->
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/fzFhRFCQ/2025-05-31-005253.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 1"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/TqrvrRvQ/2025-05-31-011814.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 2"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/XZskkTd4/2025-05-31-005733.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 3"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/20KL479k/2025-06-02-200709.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 4"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/v4xGnyb6/2025-06-02-200458.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 5"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/nNDBV7Cc/2025-06-02-200527.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 6"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/MyGNPDMY/2025-06-02-200543.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 7"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/JR23LN0C/2025-05-31-005322.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 8"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/gL6tCtyT/2025-05-31-011752.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 9"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/PsV4t3X3/2025-06-02-200625.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 10"></div>
+                            <div class="w-[160px] md:w-[220px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.04] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/j9L7mNH6/2025-05-31-011829.png" class="w-full h-auto rounded-[1.25rem]" alt="App Screen 11"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-20 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 3: Product Roadmap & Future Outlook</h2>
+                    <p class="editorial-text">For the current MVP (Minimum Viable Product) version, I have mapped out the next iteration phases to continuously drive user stickiness and engagement.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all">
+                            <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined">manage_search</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-2">Feature Depth Enhancement</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Plan to build a "Precision Search & Advanced Filtering Engine" to overcome the limitations of the current basic search functionality.</p>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all">
+                            <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined">library_books</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-2">Content Enrichment</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Deeply optimize each page by introducing more diverse book genre tags and curated thematic sections for better discovery.</p>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all">
+                            <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined">forum</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-2">Social Integration (PLG)</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Integrate user reviews and shared booklists, leveraging UGC (User-Generated Content) to drive Product-Led Growth.</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <div class="max-w-[840px] mx-auto mt-24 pt-12 border-t border-gray-200 text-center reveal delay-100">
+                <a href="#" onclick="showHome(event)" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white border border-gray-200 text-gray-900 font-bold hover:text-orange-600 hover:border-orange-400 transition-all shadow-sm hover:shadow-md group">
+                    <span class="material-symbols-outlined text-[20px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                    Back to all projects
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <!-- ==============================================
+         CASE STUDY 4: GUANGXING PAPER MILL
+         ============================================== -->
+    <div id="guangxing-case-study-view" class="w-full page-hidden">
+        <main class="max-w-[840px] mx-auto px-6 pt-40 pb-24">
+            <header class="mb-12 reveal">
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-4 py-1.5 bg-stone-100 text-stone-700 text-[11px] font-bold rounded-full uppercase tracking-widest">Product Owner</span>
+                    <span class="px-4 py-1.5 bg-gray-200 text-gray-700 text-[11px] font-bold rounded-full uppercase tracking-widest">UX / UI Redesign</span>
+                    <span class="px-4 py-1.5 bg-stone-100 text-stone-700 text-[11px] font-bold rounded-full uppercase tracking-widest">Class Project</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-[56px] font-black leading-[1.1] tracking-tighter mb-8 text-gray-900">
+                    Guangxing Paper Mill: <br/>UX/UI Digital Redesign
+                </h1>
+                
+                <a href="https://guangxing.webnode.page/%e9%97%9c%e6%96%bc%e6%88%91%e5%80%91/" target="_blank" class="inline-flex items-center gap-3 bg-stone-800 text-white px-8 py-4 rounded-[1rem] font-bold shadow-lg shadow-stone-800/20 hover:bg-stone-900 hover:-translate-y-1 transition-all mb-10 group">
+                    <span class="material-symbols-outlined">language</span>
+                    View Redesigned Demo Site
+                    <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+                
+                <div class="py-6 grid grid-cols-1 md:grid-cols-3 gap-8 border-y border-gray-200 mt-6">
+                    <div>
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Role</span>
+                        <strong class="text-[15px] font-bold text-gray-800">Product Owner</strong>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Core Tools</span>
+                        <div class="flex gap-2 text-gray-800 font-bold mt-1 text-[15px]">
+                            <span>Figma</span><span class="text-gray-300">/</span><span>Webnode</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 pt-4 md:pt-0 md:border-t-0 border-t border-gray-200">
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Background & Constraints</span>
+                        <p class="text-gray-600 leading-relaxed text-[15px] max-w-3xl font-medium">
+                            The "About Us" section of the Guangxing Paper Mill website faced severe UX issues, including chaotic information architecture, inconsistent visual styles, and broken interactions. The goal was to reorganize the content to create a digital storefront that reflects its traditional cultural heritage while delivering a modern user experience.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="rounded-3xl border border-gray-100 bg-white p-2 shadow-sm overflow-hidden group mb-20 reveal delay-100 flex items-center justify-center aspect-[21/9]">
+                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-500" alt="Guangxing Web Design Cover Image">
+            </div>
+
+            <article class="max-w-[840px] mx-auto">
+                <section class="mb-24 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 1: Pain-point & IA Restructuring</h2>
+                    <p class="editorial-text">Before starting the design, I conducted an in-depth "phenomenon organization and problem reproduction" of the legacy site.</p>
+                    
+                    <ul class="space-y-6 mb-10 mt-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-stone-600"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Pain-point Mind Mapping:</strong> Identified 3 core issues: fragmented information causing navigation difficulties, lack of variation in sub-pages leading to reading fatigue, and a cumbersome language switching process.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-stone-600"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">IA Convergence:</strong> Applied Information Architecture principles to consolidate the scattered "7 pages, 6 menus" into a logically clear "5 pages, 4 menus" structure, significantly reducing users' cognitive load.</p>
+                        </li>
+                    </ul>
+
+                    <div class="bg-gray-50 rounded-2xl p-6 md:p-8 border border-gray-200">
+                        <h4 class="text-gray-800 font-bold uppercase tracking-widest text-sm mb-5 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[20px] text-stone-600">folder_special</span> Deliverables & Outcomes
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <a href="https://www.figma.com/board/XIOnQM6i4xPc26jdXAf0pR/%E5%BB%A3%E8%88%88%E7%B4%99%E5%AF%AE%E7%B6%B2%E7%AB%99%E6%9E%B6%E6%A7%8B%E5%9C%96?node-id=0-1&t=hEYur6N0fm24uEuv-0" target="_blank" class="deliverable-card rounded-[1rem] p-5 flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center shrink-0"><span class="material-symbols-outlined">account_tree</span></div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-0.5 text-[15px]">Website Architecture</h4>
+                                    <span class="text-stone-600 text-sm font-semibold flex items-center gap-1 group-hover:underline">View FigJam <span class="material-symbols-outlined text-[14px]">open_in_new</span></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="mb-24 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 2: Design System & User Experience</h2>
+                    <p class="editorial-text">Starting from user needs, I balanced "traditional cultural heritage" with a "modern digital experience."</p>
+
+                    <ul class="space-y-6 mb-10 mt-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-stone-600"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Cross-language Design System:</strong> Established a unified UI component library, a primary color palette (White / Light Gray / Dark Blue), and typography guidelines (Microsoft JhengHei + Times New Roman) to resolve visual fragmentation.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-stone-600"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Intuitive Interaction:</strong> Referenced modern web layouts to transform previously click-to-jump content into a seamless single-page scroll. Additionally, placed an intuitive language switch button at the top for international visitors.</p>
+                        </li>
+                    </ul>
+
+                    <div class="relative w-[100vw] ml-[calc(-50vw+50%)] overflow-hidden mt-12 py-10 bg-[#F4F4F0] border-y border-gray-200">
+                        <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#F4F4F0] to-transparent z-10 pointer-events-none"></div>
+                        <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#F4F4F0] to-transparent z-10 pointer-events-none"></div>
+                        
+                        <div class="flex gap-6 animate-scroll w-max px-6 items-center">
+                            <!-- Group 1 -->
+                            <div class="w-[280px] md:w-[350px] shrink-0 rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white"><img src="https://i.ibb.co/271GqSyL/5.png" class="w-full h-auto" alt="UI Design 1"></div>
+                            <div class="w-[280px] md:w-[350px] shrink-0 rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white"><img src="https://i.ibb.co/fzjJyGhh/9.png" class="w-full h-auto" alt="UI Design 2"></div>
+                            <div class="w-[280px] md:w-[350px] shrink-0 rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white"><img src="https://i.ibb.co/d4jfjGw5/11.png" class="w-full h-auto" alt="UI Design 3"></div>
+                            <div class="w-[280px] md:w-[350px] shrink-0 rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white"><img src="https://i.ibb.co/gCB5djn/14.png" class="w-full h-auto" alt="UI Design 4"></div>
+                            <div class="w-[280px] md:w-[350px] shrink-0 rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white"><img src="https://i.ibb.co/C33r3w5J/16.png" class="w-full h-auto" alt="UI Design 5"></div>
+                            <div class="w-[280px] md:w-[350px] shrink-0 rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white"><img src="https://i.ibb.co/TBv9CSDh/18.png" class="w-full h-auto" alt="UI Design 6"></div>
+                            <!-- Group 2 (Duplicate for infinite scroll) -->
+                            <div class="w-[280px] md:w-[350px] shrink-0 rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white"><img src="https://i.ibb.co/271GqSyL/5.png" class="w-full h-auto" alt="UI Design 1"></div>
+                            <div class="w-[280px] md:w-[350px] shrink-0 rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white"><img src="https://i.ibb.co/fzjJyGhh/9.png" class="w-full h-auto" alt="UI Design 2"></div>
+                            <div class="w-[280px] md:w-[350px] shrink-0 rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white"><img src="https://i.ibb.co/d4jfjGw5/11.png" class="w-full h-auto" alt="UI Design 3"></div>
+                            <div class="w-[280px] md:w-[350px] shrink-0 rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white"><img src="https://i.ibb.co/gCB5djn/14.png" class="w-full h-auto" alt="UI Design 4"></div>
+                            <div class="w-[280px] md:w-[350px] shrink-0 rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white"><img src="https://i.ibb.co/C33r3w5J/16.png" class="w-full h-auto" alt="UI Design 5"></div>
+                            <div class="w-[280px] md:w-[350px] shrink-0 rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white"><img src="https://i.ibb.co/TBv9CSDh/18.png" class="w-full h-auto" alt="UI Design 6"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-20 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 3: Collaboration & Learnings</h2>
+                    <p class="editorial-text">Focusing on cross-team communication, proposing initial hypotheses, and executing standard deliveries.</p>
+                    
+                    <ul class="space-y-6 mb-12 mt-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-stone-600"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Standardized Design Delivery:</strong> Deeply understood the pain points of design-to-development communication. By creating Figma files with comprehensive instructions and usage guidelines, I effectively reduced back-and-forth confirmations during development.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-stone-600"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Uncovering Behavioral Logic:</strong> Learned to go beyond superficial "ugly layout" problems and dig deeper into *why* users couldn't find information, ensuring every page had a clear functional purpose.</p>
+                        </li>
+                    </ul>
+
+                    <div class="bg-[#FDFBF7] border border-[#F2EFE9] p-8 md:p-10 rounded-[2rem] shadow-sm">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                            <span class="text-3xl">🏆</span> Impact & Feedback
+                        </h3>
+                        
+                        <blockquote class="border-l-4 border-stone-500 pl-6 py-2 bg-white rounded-r-xl shadow-sm">
+                            <p class="text-[17px] font-medium text-gray-800 italic leading-relaxed pr-4">
+                                "This website redesign completely exceeded our expectations! We originally just wanted to fix the messy pages, but the team not only reorganized the IA but also built such a complete visual system. We finally have a digital brand identity that truly belongs to Guangxing Paper Mill."
+                            </p>
+                            <footer class="mt-3 text-sm font-bold text-stone-600">— Client Testimonial</footer>
+                        </blockquote>
+                    </div>
+                </section>
+            </article>
+
+            <div class="max-w-[840px] mx-auto mt-24 pt-12 border-t border-gray-200 text-center reveal delay-100">
+                <a href="#" onclick="showHome(event)" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white border border-gray-200 text-gray-900 font-bold hover:text-stone-700 hover:border-stone-400 transition-all shadow-sm hover:shadow-md group">
+                    <span class="material-symbols-outlined text-[20px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                    Back to all projects
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <!-- ==============================================
+         CASE STUDY 5: SPOTIFY INTELLIGENCE
+         ============================================== -->
+    <div id="spotify-case-study-view" class="w-full page-hidden">
+        <main class="max-w-[840px] mx-auto px-6 pt-40 pb-24">
+            <header class="mb-12 reveal">
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-4 py-1.5 bg-indigo-50 text-indigo-700 text-[11px] font-bold rounded-full uppercase tracking-widest">Data Product Manager</span>
+                    <span class="px-4 py-1.5 bg-gray-200 text-gray-700 text-[11px] font-bold rounded-full uppercase tracking-widest">Python & Streamlit</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-[56px] font-black leading-[1.1] tracking-tighter mb-8 text-gray-900">
+                    Spotify Intelligence: <br/>From Data Insights to Business Decision Dashboard
+                </h1>
+                
+                <a href="https://my-first-app-app-97ceuyshcbv9pfsr8xlzsk.streamlit.app/" target="_blank" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-[1rem] font-bold shadow-lg shadow-indigo-600/20 hover:bg-indigo-700 hover:-translate-y-1 transition-all mb-10 group">
+                    <span class="material-symbols-outlined">insights</span>
+                    View Live Dashboard
+                    <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+                
+                <div class="py-6 grid grid-cols-1 md:grid-cols-3 gap-8 border-y border-gray-200 mt-6">
+                    <div>
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Role</span>
+                        <strong class="text-[15px] font-bold text-gray-800">Data Product Manager</strong>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Core Tools</span>
+                        <div class="flex flex-wrap gap-2 text-gray-800 font-bold mt-1 text-[15px]">
+                            <span>Python</span><span class="text-gray-300">/</span><span>Plotly</span><span class="text-gray-300">/</span><span>Streamlit</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 pt-4 md:pt-0 md:border-t-0 border-t border-gray-200">
+                        <span class="block text-xs text-gray-400 uppercase tracking-widest mb-2 font-bold">Background</span>
+                        <p class="text-gray-600 leading-relaxed text-[15px] max-w-3xl font-medium">
+                            Developed independently at TU Berlin. This data product transforms massive raw music datasets into an actionable "Business Decision Dashboard" for music producers and marketing teams, driving decisions from "Descriptive" to "Prescriptive."
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="rounded-3xl border border-gray-100 bg-white p-2 shadow-sm overflow-hidden group mb-20 reveal delay-100 flex items-center justify-center aspect-[21/9]">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-700" alt="Data Dashboard Interface">
+            </div>
+
+            <article class="max-w-[840px] mx-auto">
+                <section class="mb-24 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 1: Pain-point Convergence & Data Wrangling</h2>
+                    <p class="editorial-text">In the early development stages, I identified three core business pain points for music producers and A&R teams: discovering low-cost high-potential artists, predicting audience taste trends, and assessing production risks.</p>
+                    
+                    <ul class="space-y-6 mb-10 mt-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-indigo-600"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Data Cleaning & Feature Extraction:</strong> Faced with 15 years of noisy raw Spotify data, I rigorously filtered out invalid genres and applied logical conditions to transform continuous numerical values (e.g., Tempo) into business-meaningful categorical tags (e.g., Slow, Mainstream), establishing a clean data foundation for subsequent decision-making.</p>
+                        </li>
+                    </ul>
+
+                    <div class="rounded-3xl border border-gray-100 bg-white p-2 shadow-sm overflow-hidden group mt-8">
+                        <img src="https://i.ibb.co/Zpb09cnC/2026-03-13-213736.png" class="w-full h-auto rounded-2xl group-hover:scale-[1.02] transition-transform duration-500" alt="Data Wrangling in Jupyter Notebook">
+                        <p class="text-center text-sm text-gray-400 mt-4 mb-2">▲ <i>Dashboard & Feature Extraction Logic in Python</i></p>
+                    </div>
+                </section>
+                
+                <section class="mb-24 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 2: Core Product Features & Logic</h2>
+                    <p class="editorial-text">To address the identified pain points, I combined business acumen with data engineering to design three core feature modules:</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all group hover:border-indigo-300">
+                            <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-5 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined">track_changes</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-3 text-lg leading-tight">Dark Horse Radar</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Designed a four-quadrant algorithm to filter micro-influencers with "low follower counts but extreme popularity," helping record labels maximize ROI.</p>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all group hover:border-indigo-300">
+                            <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-5 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined">radar</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-3 text-lg leading-tight">Hit Potential Predictor</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Built a simulator allowing producers to adjust demo track audio features via interactive sliders, instantly generating a "Predicted Hit Score".</p>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all group hover:border-indigo-300">
+                            <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-5 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined">pie_chart</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-3 text-lg leading-tight">Format Strategy Performance</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Utilized side-by-side visual analysis to illustrate the market performance differences between "Singles" and "Albums" across various genres.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-20 reveal">
+                    <h2 class="editorial-heading text-[32px]">Phase 3: Interactive UI & Cloud Deployment</h2>
+                    <p class="editorial-text">A data product must transcend local environments; it requires a seamless user experience to be truly adopted and implemented.</p>
+                    
+                    <ul class="space-y-6 mb-12 mt-6">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-indigo-600"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Interactive Storytelling:</strong> Abandoned static charts in favor of Plotly to create dynamic bubble charts and global heatmaps. Users can visually track how audience tastes shift towards "high energy and high danceability" along a timeline.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-2.5 flex-shrink-0 w-2 h-2 rounded-full bg-indigo-600"></div>
+                            <p class="editorial-text mb-0"><strong class="text-gray-900 font-bold">Full-Stack Deployment:</strong> Encapsulated Python logic using Streamlit to design a modern Web App with sidebars and multiple tabs. Successfully deployed it to the cloud via Git version control, completing end-to-end product delivery.</p>
+                        </li>
+                    </ul>
+
+                    <div class="relative w-[100vw] ml-[calc(-50vw+50%)] overflow-hidden mt-12 mb-16 py-10 bg-indigo-50/50 border-y border-indigo-100">
+                        <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#FAFAFA] to-transparent z-10 pointer-events-none"></div>
+                        <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#FAFAFA] to-transparent z-10 pointer-events-none"></div>
+                        
+                        <div class="flex gap-6 animate-scroll w-max px-6 items-center">
+                            <!-- Group 1 -->
+                            <div class="w-[300px] md:w-[480px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/xK10CjNx/1770129853941.jpg" class="w-full h-auto rounded-[1.25rem]" alt="Dashboard Screen 1"></div>
+                            <div class="w-[300px] md:w-[480px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/Qv7KnFdV/1770129854062.jpg" class="w-full h-auto rounded-[1.25rem]" alt="Dashboard Screen 2"></div>
+                            <div class="w-[300px] md:w-[480px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/HfhwYv3P/1770129854711.jpg" class="w-full h-auto rounded-[1.25rem]" alt="Dashboard Screen 3"></div>
+                            <div class="w-[300px] md:w-[480px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/3Y1VJb3g/1770129854890.jpg" class="w-full h-auto rounded-[1.25rem]" alt="Dashboard Screen 4"></div>
+                            <div class="w-[300px] md:w-[480px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/M5nVyD8S/1770129853767.jpg" class="w-full h-auto rounded-[1.25rem]" alt="Dashboard Screen 5"></div>
+                            
+                            <!-- Group 2 (Duplicate for infinite scroll) -->
+                            <div class="w-[300px] md:w-[480px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/xK10CjNx/1770129853941.jpg" class="w-full h-auto rounded-[1.25rem]" alt="Dashboard Screen 1"></div>
+                            <div class="w-[300px] md:w-[480px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/Qv7KnFdV/1770129854062.jpg" class="w-full h-auto rounded-[1.25rem]" alt="Dashboard Screen 2"></div>
+                            <div class="w-[300px] md:w-[480px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/HfhwYv3P/1770129854711.jpg" class="w-full h-auto rounded-[1.25rem]" alt="Dashboard Screen 3"></div>
+                            <div class="w-[300px] md:w-[480px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/3Y1VJb3g/1770129854890.jpg" class="w-full h-auto rounded-[1.25rem]" alt="Dashboard Screen 4"></div>
+                            <div class="w-[300px] md:w-[480px] shrink-0 rounded-[1.5rem] overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.03] hover:shadow-xl hover:z-20 transition-all duration-300 bg-white p-1.5"><img src="https://i.ibb.co/M5nVyD8S/1770129853767.jpg" class="w-full h-auto rounded-[1.25rem]" alt="Dashboard Screen 5"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#F8F9FA] border border-[#E8ECF1] p-8 md:p-10 rounded-[2rem] shadow-sm">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                            <span class="text-3xl">🏆</span> Reflections & PM Mindset Growth
+                        </h3>
+                        
+                        <p class="editorial-text mb-0 font-medium">This high-intensity full-stack development journey profoundly cemented my understanding of a "Data Product Manager's" core value: <strong class="text-indigo-700">Great analytics shouldn't just be flashy charts; they must clearly answer business questions, provide actionable options, and ultimately drive valuable decisions.</strong> This data-driven mindset will be my strongest asset for future product iteration and optimization.</p>
+                    </div>
+                </section>
+            </article>
+
+            <div class="max-w-[840px] mx-auto mt-24 pt-12 border-t border-gray-200 text-center reveal delay-100">
+                <a href="#" onclick="showHome(event)" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white border border-gray-200 text-gray-900 font-bold hover:text-indigo-600 hover:border-indigo-400 transition-all shadow-sm hover:shadow-md group">
+                    <span class="material-symbols-outlined text-[20px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                    Back to all projects
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer id="global-footer" class="bg-white py-10 border-t border-gray-200 mt-10">
+        <div class="max-w-[1000px] mx-auto px-6 text-center">
+            <p class="text-gray-500 text-sm font-medium">© 2026 Yi-Shan Chen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function initReveals() {
+            const reveals = document.querySelectorAll(".reveal");
+            reveals.forEach(r => r.classList.remove("active"));
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            reveals.forEach(reveal => observer.observe(reveal));
+        }
+
+        document.addEventListener("DOMContentLoaded", initReveals);
+
+        function hideAllViews() {
+            document.getElementById('home-view').classList.add('page-hidden');
+            document.getElementById('aws-case-study-view').classList.add('page-hidden');
+            document.getElementById('slowlyfly-case-study-view').classList.add('page-hidden');
+            document.getElementById('mobile-ai-case-study-view').classList.add('page-hidden');
+            document.getElementById('guangxing-case-study-view').classList.add('page-hidden'); 
+            document.getElementById('spotify-case-study-view').classList.add('page-hidden');
+        }
+
+        function showCaseStudy(e, id) {
+            e.preventDefault();
+            hideAllViews();
+            
+            document.getElementById(`${id}-case-study-view`).classList.remove('page-hidden');
+            
+            document.getElementById('nav-links').classList.add('hidden');
+            document.getElementById('nav-links').classList.remove('md:flex');
+            document.getElementById('nav-back-icon').classList.remove('hidden');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(initReveals, 50);
+        }
+
+        function showHome(e) {
+            e.preventDefault();
+            hideAllViews();
+            
+            document.getElementById('home-view').classList.remove('page-hidden');
+            
+            document.getElementById('nav-links').classList.remove('hidden');
+            document.getElementById('nav-links').classList.add('md:flex');
+            document.getElementById('nav-back-icon').classList.add('hidden');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(initReveals, 50);
+        }
+    </script>
+</body>
+</html>
